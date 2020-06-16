@@ -1,0 +1,80 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  height: 90vh;
+  margin: 10px;
+  padding-top: 1.5%;
+  font-family: 'Franklin Gothic Heavy', 'Arial Narrow', Arial, sans-serif;
+}
+h1 {
+  display: flex;
+  margin: 10px auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  border: 1px solid black;
+  margin: auto;
+}
+
+.buttons-list {
+  width: 100%;
+  height: 20%;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons-list .buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons-list .buttons button {
+  margin: 5px 10px;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Franklin Gothic Heavy', 'Arial Narrow', Arial, sans-serif;
+}
+
+.buttons-list .buttons button:hover {
+  background-color: black;
+  color: white;
+}
+
+.textbox {
+  width: 90%;
+  height: 50%;
+  padding: 10px;
+}
+
+a {
+  font-size: 20px;
+  color: inherit;
+  font-weight: bolder;
+}
