@@ -71,7 +71,7 @@ class Grid extends React.Component {
   // clear handler
   clearHandler() {
     if (this.state.isPlaying === false) {
-      let newGrid = new Array(255).fill(0);
+      let nextGrid = new Array(255).fill(0);
       let stops = [];
 
       for (let i = 0; i < this.state.grid.length; i++) {
@@ -79,7 +79,7 @@ class Grid extends React.Component {
           stops.push(i);
         }
       }
-      this.setState({grid: newGrid, gen: 0}, this.updateCanvas([], stops));
+      this.setState({grid: nextGrid, gen: 0}, this.updateCanvas([], stops));
     }
   }
 
@@ -182,6 +182,7 @@ class Grid extends React.Component {
     return numNeighbors;
   }
 
+  // Uses double buffering to update grid with next generation
   // draw
   drawIt(ctx, x, y, w, h, type) {
       if(type === 'birth') {
@@ -239,16 +240,16 @@ class Grid extends React.Component {
     if(this.state.isPlaying === false) {
       this.clearHandler();
 
-      let newGrid = new Array(255).fill(0);
+      let nextGrid = new Array(255).fill(0);
       let arr = [];
 
       // switch cases
       switch(e.target.name) {
         case 'random':
-          for (let i = 0; i < newGrid.length; i++) {
-            newGrid[i] = Math.floor(Math.random() * Math.floor(2));
+          for (let i = 0; i < nextGrid.length; i++) {
+            nextGrid[i] = Math.floor(Math.random() * Math.floor(2));
           }
-          this.setState({grid: newGrid}, this.updateCanvas(newGrid));
+          this.setState({grid: nextGrid}, this.updateCanvas(nextGrid));
           break;
         case 'glider':
           arr = [53,66,67,68,37];
@@ -267,9 +268,9 @@ class Grid extends React.Component {
       // alg for random canvas
       if(e.target.name !== 'random'){
         for (let i = 0; i < arr.length; i++) {
-          newGrid[arr[i]] = 1;
+          nextGrid[arr[i]] = 1;
         }
-        this.setState({grid: newGrid}, this.updateCanvas(arr,[]));
+        this.setState({grid: nextGrid}, this.updateCanvas(arr,[]));
       }
     }
   }
