@@ -5,6 +5,7 @@ import Buttons from './Buttons';
 class Grid extends React.Component {
   constructor(props) {
     super(props);
+    // first state for double buffering
     this.state = {
       isPlaying: false,
       grid: [],
@@ -48,7 +49,7 @@ class Grid extends React.Component {
         ctx.stroke();
       }
     }
-
+    // second state for double buffering
     this.setState({
       grid: rectangles,
       width: rectw,
