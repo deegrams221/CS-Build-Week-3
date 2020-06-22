@@ -58,13 +58,14 @@ canvas {
   height: 40px;
   width: 100px;
   border-radius: 5px;
+  border-color: rgb(184, 180, 180);
   cursor: pointer;
   font-family: 'Franklin Gothic Heavy', 'Arial Narrow', Arial, sans-serif;
 }
 
 .buttons-list .buttons button:hover {
   background-color: black;
-  color: white;
+  color: rgb(219, 215, 215);
 }
 
 .textbox {
